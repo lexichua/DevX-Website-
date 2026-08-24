@@ -117,7 +117,7 @@ main {
   justify-content: center;
   padding: 0 31px;
   z-index: 1000;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform, opacity;
   pointer-events: none;
 }
@@ -488,11 +488,11 @@ main {
   z-index: 1;
 }
 
-/* Side Glow Container inside Who Section */
+/* Side Glow Container inside Who Section - Halfway off-screen */
 .who-glow-container {
   position: absolute;
   top: -30px;
-  left: -200px;
+  left: -296px;
   width: 593px;
   height: 593px;
   pointer-events: none;
