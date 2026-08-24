@@ -488,11 +488,11 @@ main {
   z-index: 1;
 }
 
-/* Side Glow Container inside Who Section - Halfway off-screen */
+/* Side Glow Container inside Who Section - Subtle edge accent (mostly off-screen) */
 .who-glow-container {
   position: absolute;
   top: -30px;
-  left: -296px;
+  left: -440px;
   width: 593px;
   height: 593px;
   pointer-events: none;
@@ -509,7 +509,7 @@ main {
 }
 
 .who-glow-container.glow-theme-blue .glow-blue {
-  opacity: 1;
+  opacity: 0.75;
 }
 .who-glow-container.glow-theme-blue .glow-orange {
   opacity: 0;
@@ -519,7 +519,7 @@ main {
   opacity: 0;
 }
 .who-glow-container.glow-theme-orange .glow-orange {
-  opacity: 1;
+  opacity: 0.75;
 }
 
 .who-container {
@@ -565,12 +565,13 @@ main {
   white-space: pre;
 }
 
+/* Subtle, understated text gradients */
 .dynamic-word.theme-blue {
-  background-image: linear-gradient(90deg, #486bcd 0%, #7b96e5 45%, #ffffff 85%);
+  background-image: linear-gradient(90deg, #7899ec 0%, #b2c5f8 25%, #ffffff 60%);
 }
 
 .dynamic-word.theme-orange {
-  background-image: linear-gradient(90deg, #E03A11 0%, #F58C3C 45%, #ffffff 85%);
+  background-image: linear-gradient(90deg, #f07b5a 0%, #f7b483 25%, #ffffff 60%);
 }
 
 .typing-cursor {
