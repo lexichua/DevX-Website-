@@ -295,34 +295,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Smart Auto-Hide Navbar on Scroll (Hide on Down, Reappear on Up)
   // =========================================================================
   const navbarWrapper = document.querySelector('.navbar-wrapper');
-  let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
-  const scrollThreshold = 8;
+  let lastScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+  const scrollThreshold = 6;
 
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+  function handleNavScroll() {
+    const currentScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
 
-    // At top of page: always show navbar
-    if (currentScrollY <= 50) {
+    // Do not hide if mobile dropdown menu is open
+    const navLinks = document.getElementById('nav-links');
+    if (navLinks && navLinks.classList.contains('mobile-open')) {
       if (navbarWrapper) navbarWrapper.classList.remove('nav-hidden');
       lastScrollY = currentScrollY;
       return;
     }
 
-    // Ignore tiny scroll movements to avoid jitter
-    if (Math.abs(currentScrollY - lastScrollY) < scrollThreshold) {
+    // At top of page: always show navbar
+    if (currentScrollY <= 60) {
+      if (navbarWrapper) navbarWrapper.classList.remove('nav-hidden');
+      lastScrollY = Math.max(0, currentScrollY);
       return;
     }
 
-    // Scrolling down -> hide navbar
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+    const diff = currentScrollY - lastScrollY;
+
+    // Ignore tiny scroll movements to avoid jitter
+    if (Math.abs(diff) < scrollThreshold) {
+      return;
+    }
+
+    if (diff > 0 && currentScrollY > 80) {
+      // Scrolling down -> hide navbar
       if (navbarWrapper) navbarWrapper.classList.add('nav-hidden');
-    } else if (currentScrollY < lastScrollY) {
+    } else if (diff < 0) {
       // Scrolling up -> reveal navbar
       if (navbarWrapper) navbarWrapper.classList.remove('nav-hidden');
     }
 
     lastScrollY = currentScrollY;
-  }, { passive: true });
+  }
+
+  window.addEventListener('scroll', handleNavScroll, { passive: true });
 
   // =========================================================================
   // 7. Navigation Scroll Spy (Active Links)

@@ -108,20 +108,26 @@ main {
    ========================================================================== */
 
 .navbar-wrapper {
-  position: sticky;
+  position: fixed;
   top: 33px;
   left: 0;
+  right: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 0 31px;
-  z-index: 100;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  z-index: 1000;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
   will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.navbar-wrapper .navbar {
+  pointer-events: auto;
 }
 
 .navbar-wrapper.nav-hidden {
-  transform: translateY(-140%);
+  transform: translateY(-160%);
   opacity: 0;
   pointer-events: none;
 }
@@ -1425,7 +1431,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 90px;
+  padding-top: 150px;
   padding-bottom: 140px;
 }
 
