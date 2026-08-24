@@ -1,0 +1,40 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="869.559" height="772.185" viewBox="0 0 869.559 772.185" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Gradient">
+<g id="Ellipse 1" filter="url(#filter0_fg_213_793)">
+<ellipse cx="247.106" cy="241.792" rx="247.106" ry="241.792" transform="matrix(-0.315162 0.949038 0.949038 0.315162 173.811 18.9449)" fill="url(#paint0_linear_213_793)"/>
+</g>
+<g id="Ellipse 2" filter="url(#filter1_fg_213_793)">
+<ellipse cx="230.36" cy="225.406" rx="230.36" ry="225.406" transform="matrix(0.988166 -0.15339 -0.15339 -0.988166 368.839 727.316)" fill="url(#paint1_linear_213_793)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_fg_213_793" x="-1.90735e-06" y="-1.90735e-06" width="650.804" height="659.322" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="41.5058" result="effect1_foregroundBlur_213_793"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.38461539149284363 0.38461539149284363" numOctaves="3" seed="774" />
+<feDisplacementMap in="effect1_foregroundBlur_213_793" scale="6" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+<feMerge result="effect2_texture_213_793">
+<feMergeNode in="displacedImage"/>
+</feMerge>
+</filter>
+<filter id="filter1_fg_213_793" x="254.236" y="166.301" width="615.324" height="605.885" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="38.693" result="effect1_foregroundBlur_213_793"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.47127237915992737 0.47127237915992737" numOctaves="3" seed="2503" />
+<feDisplacementMap in="effect1_foregroundBlur_213_793" scale="16.975320816040039" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+<feMerge result="effect2_texture_213_793">
+<feMergeNode in="displacedImage"/>
+</feMerge>
+</filter>
+<linearGradient id="paint0_linear_213_793" x1="247.106" y1="0" x2="247.106" y2="483.583" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E03A11"/>
+<stop offset="0.572115" stop-color="#D78B4C"/>
+</linearGradient>
+<linearGradient id="paint1_linear_213_793" x1="230.36" y1="0" x2="139.775" y2="305.082" gradientUnits="userSpaceOnUse">
+<stop offset="0.149038" stop-color="#1D3E9B"/>
+<stop offset="1" stop-color="#646EA3" stop-opacity="0.76"/>
+</linearGradient>
+</defs>
+</svg>

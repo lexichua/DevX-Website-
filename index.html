@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevX | UCLA Product Development Organization</title>
+  <meta name="description" content="DevX is UCLA's product development organization. UCLA creators, entrepreneurs, developers, and designers who want to put something out into the world.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/devx-logo.svg">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Ambient Mesh -->
+  <div class="page-background" aria-hidden="true">
+    <div class="ambient-glow hero-glow-top">
+      <img src="assets/hero-gradient.svg" alt="" />
+    </div>
+    <div class="ambient-glow hero-glow-blue-left">
+      <img src="assets/ellipse3.svg" alt="" />
+    </div>
+    <div class="ambient-glow hero-glow-blue-right">
+      <img src="assets/ellipse4.svg" alt="" />
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <a href="#hero" class="navbar-brand" aria-label="DevX Home">
+        <img src="assets/icons/devx-logo.svg" alt="DevX Logo" class="brand-logo" width="36" height="36" />
+      </a>
+
+      <div class="navbar-links" id="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#who-we-are" class="nav-link">About Us</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="team.html" class="nav-link">Our Team</a>
+      </div>
+
+      <div class="navbar-actions">
+        <button class="btn btn-primary nav-join-btn" id="nav-join-trigger">Join</button>
+        <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        
+        <!-- Left Column: Headline & CTA -->
+        <div class="hero-content">
+          <h1 class="hero-title">DevX</h1>
+          <p class="hero-subtitle">
+            UCLA creators, entrepreneurs who want to put something out into the world
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary btn-large" id="hero-join-trigger">Join</button>
+          </div>
+        </div>
+
+        <!-- Right Column: 3D Laptop & Phone Device Showcase -->
+        <div class="hero-graphics" id="hero-graphics" aria-label="DevX Community Preview">
+          <div class="hero-devices-cluster">
+            
+            <!-- Laptop Assembly -->
+            <div class="laptop-mockup-wrapper">
+              <div class="laptop-screen-container">
+                <img src="assets/laptop-screen-frame.png" alt="Laptop Frame" class="laptop-frame-bg" />
+                <div class="laptop-display">
+                  <img src="assets/team-photo-warped.png" alt="DevX UCLA Team Group Photo" class="team-screen-img" />
+                  <div class="laptop-glare"></div>
+                </div>
+              </div>
+              <img src="assets/laptop-base.png" alt="Laptop Keyboard Base" class="laptop-base-img" />
+            </div>
+
+            <!-- Standing Phone Mockup -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-chassis">
+                <img src="assets/hero-phone.svg" alt="Phone Mockup" class="phone-vector" />
+                <div class="phone-screen-glow"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section class="who-section" id="who-we-are">
+      
+      <!-- Side Ambient Glow (Alternating Blue & Orange) -->
+      <div class="who-glow-container glow-theme-blue" id="who-glow" aria-hidden="true">
+        <img src="assets/ellipse5.svg" alt="" class="glow-layer glow-blue" />
+        <img src="assets/ellipse5-orange.svg" alt="" class="glow-layer glow-orange" />
+      </div>
+
+      <div class="who-container">
+        
+        <!-- Left Headline with Animated Word Cycling -->
+        <div class="who-left">
+          <h2 class="dynamic-heading">
+            <span class="dynamic-word-line">
+              <span class="dynamic-word theme-blue" id="cycling-word">Entrepreneurs</span><span class="typing-cursor" aria-hidden="true">|</span>
+            </span>
+            <span class="static-phrase">at UCLA</span>
+          </h2>
+        </div>
+
+        <!-- Right Description & About CTA -->
+        <div class="who-right">
+          <h3 class="who-title">Who We Are</h3>
+          <div class="who-description">
+            <p>
+              DevX is UCLA's product development organization. We build real-world projects that help tackle pressing problems within the UCLA community, and beyond.
+            </p>
+            <p>
+              We help students make their ideas come to life, and grow their technical skills by pairing them with experienced teammates, building a network that lasts beyond UCLA.
+            </p>
+          </div>
+          <div class="who-cta">
+            <button class="btn btn-primary btn-large" id="about-us-trigger">About Us</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Ongoing Projects Section -->
+    <section class="projects-section" id="projects">
+      <div class="projects-container">
+        
+        <!-- Section Header -->
+        <div class="projects-header">
+          <h2 class="section-title">Ongoing Projects</h2>
+          <p class="section-subtitle">Check out what we’re working on!</p>
+        </div>
+
+        <!-- Interactive Showcase Stage -->
+        <div class="projects-stage-wrapper">
+          
+          <!-- Ambient Spotlight Glow -->
+          <div class="projects-ambient-glow">
+            <img src="assets/projects-glow.svg" alt="" />
+          </div>
+
+          <!-- 3-Device Showcase Carousel -->
+          <div class="projects-carousel" id="projects-carousel">
+            
+            <!-- Left Side Project Card: Class Chat -->
+            <div class="project-card side-card left-card" data-project="chat" id="card-chat" role="button" tabindex="0" aria-label="View ClassChat Project">
+              <div class="phone-frame">
+                <img src="assets/project-chat.png" alt="UCLA Class Chat Project Screenshot" class="project-screenshot" />
+                <div class="card-overlay"></div>
+              </div>
+            </div>
+
+            <!-- Center Project Card (Active): Blink Pop-ups -->
+            <div class="project-card center-card active" data-project="blink" id="card-blink" role="button" tabindex="0" aria-label="View Blink Project">
+              <div class="phone-frame center-frame">
+                <img src="assets/project-blink.png" alt="Blink UCLA Pop-ups App Screenshot" class="project-screenshot" />
+                <div class="card-overlay"></div>
+              </div>
+            </div>
+
+            <!-- Right Side Project Card: SoundTown -->
+            <div class="project-card side-card right-card" data-project="soundtown" id="card-soundtown" role="button" tabindex="0" aria-label="View SoundTown Project">
+              <div class="phone-frame">
+                <img src="assets/project-soundtown.png" alt="SoundTown Music Friends App Screenshot" class="project-screenshot" />
+                <div class="card-overlay"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Project Caption -->
+          <p class="project-caption" id="project-caption">
+            blink, an app to stay on top of UCLA pop-ups
+          </p>
+
+          <!-- Action Button -->
+          <div class="projects-cta">
+            <button class="btn btn-primary btn-large" id="view-projects-trigger">View Projects</button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Where Our Members Have Gone Section -->
+    <section class="alumni-section" id="alumni">
+      <div class="alumni-container">
+        
+        <h2 class="section-title">Where our members have gone</h2>
+        
+        <div class="logos-grid">
+          
+          <!-- Row 1: Apple, Microsoft, Adobe -->
+          <div class="logo-row row-1">
+            <div class="logo-item" title="Apple">
+              <img src="assets/logo-apple.png" alt="Apple logo" class="company-logo logo-apple" />
+            </div>
+            <div class="logo-item" title="Microsoft">
+              <img src="assets/logo-microsoft.png" alt="Microsoft logo" class="company-logo logo-microsoft" />
+            </div>
+            <div class="logo-item" title="Adobe">
+              <img src="assets/logo-adobe.png" alt="Adobe logo" class="company-logo logo-adobe" />
+            </div>
+          </div>
+
+          <!-- Row 2: Google, Roblox -->
+          <div class="logo-row row-2">
+            <div class="logo-item" title="Google">
+              <img src="assets/logo-google.png" alt="Google logo" class="company-logo logo-google" />
+            </div>
+            <div class="logo-item" title="Roblox">
+              <img src="assets/logo-roblox.png" alt="Roblox logo" class="company-logo logo-roblox" />
+            </div>
+          </div>
+
+          <!-- Row 3: Meta, Coinbase -->
+          <div class="logo-row row-3">
+            <div class="logo-item" title="Meta">
+              <img src="assets/logo-meta.png" alt="Meta logo" class="company-logo logo-meta" />
+            </div>
+            <div class="logo-item" title="Coinbase">
+              <img src="assets/logo-coinbase.png" alt="Coinbase logo" class="company-logo logo-coinbase" />
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-container">
+      
+      <!-- Column 1: Brand & Copyright -->
+      <div class="footer-col footer-brand-col">
+        <h2 class="footer-brand">DevX</h2>
+        <p class="footer-copyright">© 2026 UCLA DevX</p>
+      </div>
+
+      <!-- Column 2: Explore Links -->
+      <div class="footer-col footer-nav-col">
+        <h4 class="footer-heading">EXPLORE</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#who-we-are">About Us</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Secondary Links -->
+      <div class="footer-col footer-team-col">
+        <ul class="footer-links secondary-links">
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="#join-modal" id="footer-join-link">Join</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact & Socials -->
+      <div class="footer-col footer-contact-col">
+        <h4 class="footer-heading">CONTACT</h4>
+        <a href="mailto:ucladevx@gmail.com" class="footer-email" target="_blank" rel="noopener noreferrer">
+          ucladevx@gmail.com
+        </a>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/ucladevx/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+            <svg width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M9 13.5V21M9 9V9.015M15 21V13.5M21 21V16.5C21 15.7044 20.6839 14.9413 20.1213 14.3787C19.5587 13.8161 18.7956 13.5 18 13.5C17.2044 13.5 16.4413 13.8161 15.8787 14.3787C15.3161 14.9413 15 15.7044 15 16.5M1.5 7.5C1.5 5.9087 2.13214 4.38258 3.25736 3.25736C4.38258 2.13214 5.9087 1.5 7.5 1.5H22.5C24.0913 1.5 25.6174 2.13214 26.7426 3.25736C27.8679 4.38258 28.5 5.9087 28.5 7.5V22.5C28.5 24.0913 27.8679 25.6174 26.7426 26.7426C25.6174 27.8679 24.0913 28.5 22.5 28.5H7.5C5.9087 28.5 4.38258 27.8679 3.25736 26.7426C2.13214 25.6174 1.5 24.0913 1.5 22.5V7.5Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/ucladevx/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+            <svg width="28" height="28" viewBox="0 0 30.375 30.375" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M22.7812 7.59375V7.61063M1.6875 8.4375C1.6875 6.64729 2.39866 4.9304 3.66453 3.66453C4.9304 2.39866 6.64729 1.6875 8.4375 1.6875H21.9375C23.7277 1.6875 25.4446 2.39866 26.7105 3.66453C27.9763 4.9304 28.6875 6.64729 28.6875 8.4375V21.9375C28.6875 23.7277 27.9763 25.4446 26.7105 26.7105C25.4446 27.9763 23.7277 28.6875 21.9375 28.6875H8.4375C6.64729 28.6875 4.9304 27.9763 3.66453 26.7105C2.39866 25.4446 1.6875 23.7277 1.6875 21.9375V8.4375ZM10.125 15.1875C10.125 16.5302 10.6584 17.8178 11.6078 18.7672C12.5572 19.7166 13.8448 20.25 15.1875 20.25C16.5302 20.25 17.8178 19.7166 18.7672 18.7672C19.7166 17.8178 20.25 16.5302 20.25 15.1875C20.25 13.8448 19.7166 12.5572 18.7672 11.6078C17.8178 10.6584 16.5302 10.125 15.1875 10.125C13.8448 10.125 12.5572 10.6584 11.6078 11.6078C10.6584 12.5572 10.125 13.8448 10.125 15.1875Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Interactive Join / Recruitment Modal -->
+  <div class="modal-backdrop" id="join-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-badge">Recruitment</span>
+        <h2 class="modal-title" id="modal-title">Join UCLA DevX</h2>
+        <p class="modal-description">
+          Build products that matter. We recruit product managers, software engineers, UI/UX designers, and growth marketers each quarter.
+        </p>
+      </div>
+
+      <form class="join-form" id="join-form" onsubmit="event.preventDefault(); handleFormSubmit();">
+        <div class="form-group">
+          <label for="applicant-name">Full Name</label>
+          <input type="text" id="applicant-name" placeholder="Bruin Bear" required />
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-email">UCLA Email (@g.ucla.edu)</label>
+          <input type="email" id="applicant-email" placeholder="bbear@g.ucla.edu" required />
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-role">Role of Interest</label>
+          <select id="applicant-role" required>
+            <option value="" disabled selected>Select a track</option>
+            <option value="software">Software Engineering (Frontend / Backend / Fullstack / Mobile)</option>
+            <option value="design">UI/UX Product Design</option>
+            <option value="pm">Product Management</option>
+            <option value="marketing">Growth & Marketing</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-year">Year & Major</label>
+          <input type="text" id="applicant-year" placeholder="e.g. 2nd Year, Computer Science" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit Application Interest</button>
+      </form>
+
+      <div class="form-success-message" id="form-success" style="display: none;">
+        <div class="success-icon">✓</div>
+        <h3>Interest Received!</h3>
+        <p>We'll notify you as soon as recruitment applications open for the upcoming cycle.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
