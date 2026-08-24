@@ -292,29 +292,68 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 6. Navigation Scroll Spy (Active Links)
+  // 6. Smart Auto-Hide Navbar on Scroll (Hide on Down, Reappear on Up)
+  // =========================================================================
+  const navbarWrapper = document.querySelector('.navbar-wrapper');
+  let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollThreshold = 8;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    // At top of page: always show navbar
+    if (currentScrollY <= 50) {
+      if (navbarWrapper) navbarWrapper.classList.remove('nav-hidden');
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    // Ignore tiny scroll movements to avoid jitter
+    if (Math.abs(currentScrollY - lastScrollY) < scrollThreshold) {
+      return;
+    }
+
+    // Scrolling down -> hide navbar
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (navbarWrapper) navbarWrapper.classList.add('nav-hidden');
+    } else if (currentScrollY < lastScrollY) {
+      // Scrolling up -> reveal navbar
+      if (navbarWrapper) navbarWrapper.classList.remove('nav-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+
+  // =========================================================================
+  // 7. Navigation Scroll Spy (Active Links)
   // =========================================================================
   const sections = document.querySelectorAll('section[id]');
   const allNavLinks = document.querySelectorAll('.nav-link');
 
-  window.addEventListener('scroll', () => {
-    let currentSection = '';
-    const scrollPosition = window.pageYOffset + 200;
+  if (sections.length > 0) {
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+      const scrollPosition = (window.pageYOffset || document.documentElement.scrollTop) + 200;
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        currentSection = section.getAttribute('id');
-      }
-    });
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
 
-    allNavLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSection}`) {
-        link.classList.add('active');
+      if (currentSection) {
+        allNavLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+          } else if (link.getAttribute('href')?.startsWith('#')) {
+            link.classList.remove('active');
+          }
+        });
       }
-    });
-  });
+    }, { passive: true });
+  }
 
 });
+
