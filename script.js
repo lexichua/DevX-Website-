@@ -6,6 +6,42 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // =========================================================================
+  // 0. Smooth Scroll Inertia (Premium Weighted Scrolling)
+  // =========================================================================
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({
+      duration: 1.4,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 0.75, // slightly slower, premium weighted scrolling feel
+      touchMultiplier: 1.2,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Bind anchor clicks to Lenis smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        const targetId = anchor.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const targetElem = document.querySelector(targetId);
+          if (targetElem) {
+            e.preventDefault();
+            lenis.scrollTo(targetElem, { offset: -60 });
+          }
+        }
+      });
+    });
+  }
+
+  // =========================================================================
   // 1. Dynamic Typewriter with Alternating Blue & Orange Gradient Themes
   // =========================================================================
   const words = [
@@ -211,11 +247,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (navJoinTrigger) navJoinTrigger.addEventListener('click', openModal);
+  const heroStartAppBtn = document.getElementById('hero-start-app-btn');
+
+  if (navJoinTrigger && navJoinTrigger.tagName === 'BUTTON') {
+    navJoinTrigger.addEventListener('click', openModal);
+  }
   if (heroJoinTrigger) heroJoinTrigger.addEventListener('click', openModal);
+  if (heroStartAppBtn) heroStartAppBtn.addEventListener('click', openModal);
   if (footerJoinLink) footerJoinLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    openModal();
+    if (footerJoinLink.getAttribute('href') === '#') {
+      e.preventDefault();
+      openModal();
+    }
   });
 
   if (viewProjectsTrigger) {
