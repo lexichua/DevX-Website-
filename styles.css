@@ -1844,9 +1844,10 @@ main {
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
   box-sizing: border-box;
+  transform-origin: center center;
 }
 
 .role-card-header {
@@ -1885,7 +1886,7 @@ main {
   transition: color 0.25s ease;
 }
 
-/* Specific Role Theme Colors & Figma Variant-2 Exact Hover (NO lift, NO glow) */
+/* Specific Role Theme Colors & Figma Variant-2 Exact Hover with slight outward rotation */
 .role-card-developer {
   background-color: rgba(67, 127, 254, 0.1);
 }
@@ -1898,6 +1899,7 @@ main {
 .role-card-developer:hover {
   background-color: #437ffe;
   border-color: #437ffe;
+  transform: rotate(-1.5deg);
 }
 .role-card-developer:hover .role-title,
 .role-card-developer:hover .role-description {
@@ -1919,6 +1921,7 @@ main {
 .role-card-designer:hover {
   background-color: #e4907b;
   border-color: #e4907b;
+  transform: rotate(1.5deg);
 }
 .role-card-designer:hover .role-title,
 .role-card-designer:hover .role-description {
@@ -1940,6 +1943,7 @@ main {
 .role-card-pm:hover {
   background-color: #e4907b;
   border-color: #e4907b;
+  transform: rotate(-1.5deg);
 }
 .role-card-pm:hover .role-title,
 .role-card-pm:hover .role-description {
@@ -1961,6 +1965,7 @@ main {
 .role-card-marketer:hover {
   background-color: #437ffe;
   border-color: #437ffe;
+  transform: rotate(1.5deg);
 }
 .role-card-marketer:hover .role-title,
 .role-card-marketer:hover .role-description {
